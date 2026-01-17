@@ -1,0 +1,277 @@
+\chapter{Tutorial}
+\section{Short introduction to the bytecode language}
+\subsection{Types, variables and constants}
+\subsection{Arrays and pointers}
+\subsection{Arithmetics}
+\subsection{Functions}
+\subsection{Control flow}
+\subsection{Common functions}
+
+\section[Writing logical signatures]{Writing logical signature bytecodes}
+\footnote{See \prettyref{sec:lsigs} for more details about logical signatures in
+bytecode.}
+Logical signatures can be used as triggers for executing bytecode.
+However, instead of describing a logical signature as a \verb+.ldb+ pattern, you use (simple) C code which is later
+translated to a \verb+.ldb+-style logical signature by the ClamAV Bytecode Compiler.
+
+A bytecode triggered by a logical signature is much more powerful than a logical signature itself:
+you can write complex algorithmic detections, and use the logical signature as a \emph{filter} (to speed up matching).
+Thus another name for ``logical signature bytecodes'' is ``algorithmic detection bytecodes''.
+The detection you write in bytecode has read-only access to the file being scanned and its metadata
+(PE sections, EP, etc.).
+
+\subsection{Structure of a bytecode for algorithmic detection}
+Algorithmic detection bytecodes are triggered when a logical signature matches.
+They can execute an algorithm that determines whether the file is infected and
+with which virus.
+
+A bytecode can be either algorithmic or an unpacker (or other hook), but not both.
+
+It consists of:
+\begin{itemize}
+ \item Definition of virusnames used in the bytecode
+ \item Pattern definitions (for logical subexpressions)
+ \item The logical signature as C function: \verb+bool logical_trigger(void)+
+ \item The \verb+int entrypoint(void)+ function which gets executed when the logical signature matches
+ \item (Optional) Other functions and global constants used in \verb+entrypoint+
+\end{itemize}
+
+The syntax for defining logical signatures, and an example is described in \prettyref{sec:lsigstut}.
+
+The function \verb+entrypoint+ must report the detected virus by calling \verb+foundVirus+ and returning \verb+0+.
+It is recommended that you always return \verb+0+, otherwise a warning is shown and the file is considered clean.
+If \verb+foundVirus+ is not called, then ClamAV also assumes the file is clean.
+
+\subsection{Virusnames}
+Each logical signature bytecode must have a virusname prefix, and one or more virusnames.
+The virusname prefix is used by the SI to ensure unique virusnames (a unique number is appended for duplicate prefixes).
+
+\begin{program}
+\begin{lstlisting}
+/* Prefix, used for duplicate detection and fixing */
+VIRUSNAME_PREFIX("Trojan.Foo")
+/* You are only allowed to set these virusnames as found */
+VIRUSNAMES("A", "B")
+/* File type */
+TARGET(2)
+\end{lstlisting}
+\caption{Declaring virusnames}
+\label{prg:virname}
+\end{program}
+
+In \prettyref{prg:virname} 3 predefied macros are used:
+\begin{itemize}
+ \item \verb+VIRUSNAME_PREFIX+ which must have exactly one string argument
+ \item \verb+VIRUSNAMES+ which must have one or more string arguments
+ \item \verb+TARGET+ which must have exactly one integer argument
+\end{itemize}
+
+In this example, the bytecode could generate one of these virusnames:
+\verb+Trojan.Foo.A+, or \verb+Trojan.Foo.B+, by calling
+\verb+foundVirus("A")+ or \verb+foundVirus("B")+ respectively (notice that the prefix is not part of these calls).
+
+\subsection{Patterns}
+Logical signatures use \verb+.ndb+ style patterns, an example on how to define these
+is shown in \prettyref{prg:patterns}.
+\begin{program}
+\begin{lstlisting}
+SIGNATURES_DECL_BEGIN
+DECLARE_SIGNATURE(magic)
+DECLARE_SIGNATURE(check)
+DECLARE_SIGNATURE(zero)
+SIGNATURES_DECL_END
+
+SIGNATURES_DEF_BEGIN
+DEFINE_SIGNATURE(magic, "EP+0:aabb")
+DEFINE_SIGNATURE(check, "f00d")
+DEFINE_SIGNATURE(zero, "ffff")
+SIGNATURES_END
+\end{lstlisting}
+\caption{Declaring patterns}
+\label{prg:patterns}
+\end{program}
+
+Each pattern has a name (like a variable), and a string that is the hex pattern itself.
+The declarations are delimited by the macros \verb+SIGNATURES_DECL_BEGIN+, and \verb+SIGNATURES_DECL_END+.
+The definitions are delimited by the macros \verb+SIGNATURES_DEF_BEGIN+, and \verb+SIGNATURES_END+.
+Declarations must always come before definitions, and you can have only one
+declaration and declaration section!
+(think of declaration like variable
+declarations, and definitions as variable assignments, since that what they are under the hood).
+The order in which you declare the signatures is the order in which they appear in the generated
+logical signature.
+
+You can use any name for the patterns that is a valid record field name in C,
+and doesn't conflict with anything else declared.
+
+After using the above macros, the global variable \verb+Signatures+ will have two new fields:
+\verb+magic+, and \verb+zero+.
+These can be used as arguments to the functions \verb+count_match()+, and \verb+matches()+
+anywhere in the program as shown in \prettyref{prg:counting}:
+\begin{itemize}
+ \item \verb+matches(Signatures.match)+ will return true when the \verb+match+ signature matches (at least once)
+ \item \verb+count_match(Signatures.zero)+ will return the number of times the \verb+zero+ signature matched
+ \item \verb+count_match(Signatures.check)+ will return the number of times the \verb+check+ signature matched
+\end{itemize}
+
+The condition in the \verb+if+ can be interpreted as: if the \verb+match+ signature has matched at least once,
+and the number of times the \verb+zero+ signature matched is higher than the number of times the \verb+check+ signature matched,
+then we have found a virus \verb+A+, otherwise the file is clean.
+
+\begin{program}
+\begin{lstlisting}
+int entrypoint(void)
+{
+  if (matches(Signatures.match) && count_match(Signatures.zero) > count_match(Signatures.check))
+    foundVirus("A");
+  return 0;
+}
+\end{lstlisting}
+\caption{Using patterns}
+\label{prg:counting}
+\end{program}
+
+\subsection{Single subsignature}
+\label{sec:lsigstut}
+The simplest logical signature is like a \verb+.ndb+ signature: a virus name, signature target, 0 as logical expression
+\footnote{meaning that subexpression 0 must match}, and a \verb+ndb+-style pattern.
+
+The code for this is shown in \prettyref{prg:singlesig}
+\begin{program}
+\lstinputlisting{../../test/examples/in/lsig_simple.o1.c}
+\caption{Single subsignature example}
+\label{prg:singlesig}
+\end{program}
+
+The logical signature (created by the compiler) looks like this:
+\verb+Trojan.Foo.{A};Target:2;0;aabb+
+
+Of course you should use a \verb+.ldb+ signature in this case when all the processing in \verb+entrypoint+
+is only setting a virusname and returning.
+However, you can do more complex checks in \verb+entrypoint+, once the bytecode was triggered by the \verb+logical_trigger+
+
+In the example in \prettyref{prg:singlesig} the pattern was used without an anchor; such a pattern matches at any offset.
+You can use offsets though, the same way as in \verb+.ndb+ signatures, see \prettyref{prg:multisig} for an example.
+
+\subsection{Multiple subsignatures}
+An example for this is shown in \prettyref{prg:multisig}.
+Here you see the following new features used:
+\footnote{In case of a duplicate virusname the
+prefix is appended a unique number by the SI}
+\begin{itemize}
+ \item Multiple virusnames returned from a single bytecode (with common prefix)
+ \item Multiple subsignatures, each with a name of your choice
+ \item A pattern with an anchor (\verb|EP+0:aabb|)
+ \item More subsignatures defined than used in the logical expression
+\end{itemize}
+
+The logical signature looks like this:
+
+\noindent
+{\footnotesize
+\verb/Trojan.Foo.{A,B};Target:2;(((0|1|2)=42,2)|(3=10));EP+0:aabb;ffff;aaccee;f00d;dead/
+}
+
+Notice how the subsignature that is not used in the logical expression (number 4, \verb+dead+)
+is used in \verb+entrypoint+ to decide the virus name.
+This works because ClamAV does collect the match counts for all subsignatures (regardless if they are used or not in
+a signature). The \verb+count_match(Signatures.check2)+ call is thus a simple memory read of the count already determined by ClamAV.
+
+Also notice that comments can be used freely: they are ignored by the compiler. You can use either C-style multiline comments
+(start comment with \verb+/*+, end with \verb+*/+), or C++-style single-line comments
+(start comment with \verb+//+, automatically ended by newline).
+
+\begin{program}
+\lstinputlisting{../../test/examples/in/lsig.o1.c}
+\caption{Multiple subsignatures}
+\label{prg:multisig}
+\end{program}
+
+\subsection{W32.Polipos.A detector rewritten as bytecode}
+\subsection{Virut detector in bytecode}
+\section{Writing regular expressions in bytecode}
+ClamAV only supports a limited set of regular expressions in \verb+.ndb format+ : wildcards.
+The bytecode compiler allows you to compile fully generic regular expressions to bytecode directly.
+When libclamav loads the bytecode, it will compile to native code (if using the JIT), so it should offer quite good performance.
+
+The compiler currently uses \verb+re2c+ to compile regular expressions to C code, and then compile that to bytecode.
+The internal workings are all transparent to the user: the compiler automatically uses \verb+re2c+ when needed, and \verb+re2c+
+is embedded in the compiler, so you don't need to install it.
+
+The syntax of regular expressions are similar to the one used by \verb+POSIX regular expressions+, except you have to quote
+literals, since unquoted they are interpreted as regular expression names.
+
+\subsection{A very simple regular expression}
+
+Lets start with a simple example, to match this POSIX regular expression:
+\verb+eval([a-zA-Z_][a-zA-Z0-9_]*\.unescape+.
+
+See \prettyref{prg:reg1} \footnote{This omits the virusname, and logical signature declarations}.
+\begin{program}
+\lstinputlisting{../../test/examples/in/reg1.o1.c}
+\caption{Simple regular expression example}
+ \label{prg:reg1}
+\end{program}
+
+There are several new features introduced here, here is a step by step breakdown:
+\begin{description}
+ \item \verb+REGEX_SCANNER+ this declares the data structures needed by the regular expression matcher
+ \item \verb+seek(0, SEEK_SET)+ this sets the current file offset to position \verb+0+, matching will start at this position.
+For offset 0 it is not strictly necessary to do this, but it serves as a reminder that you might want to start matching somewhere, that is not necessarily 0.
+ \item \verb+ for(;;) { REGEX_LOOP_BEGIN+ this creates the regular expression matcher main loop. It takes the current file byte-by-byte \footnote{it is not really
+reading byte-by-byte, it is using a buffer to speed things up} and tries to match one of the regular expressions.
+ \item \verb+/*!re2c+ This mark the beginning of the regular expression description. The entire regular expression block is a C comment, starting with \verb+!re2c+
+ \item \verb+ANY = [^];+ This declares a regular expression named \verb+ANY+ that matches any byte.
+ \item \verb+"eval("[a-zA-Z_][a-zA-Z_0-9]*".unescape" {+ This is the actual regular expression.
+\begin{description}
+ \item \verb+"eval("+ This matches the literal string \verb+eval(+.
+Literals have to be placed in double quotes \verb+"+ here, unlike in POSIX regular expressions or PCRE.
+If you want case-insensitive matching, you can use \verb+'+.
+ \item \verb+[a-zA-Z_]+ This is a character class, it matches any lowercase, uppercase or \verb+_+ characters.
+ \item \verb+[a-zA-Z_0-9]*"+ Same as before, but with repetition. \verb+*+ means match zero or more times, \verb|+| means match one or more times, just like in POSIX
+regular expressions.
+ \item \verb+".unescape"+ A literal string again
+ \item \verb+{+ start of the \emph{action} block for this regular expression. Whenever the regular expression matches, the attached C code is executed.
+\end{description}
+ \item \verb+long pos = REGEX_POS;+ this determines the absolute file offset where the regular expression has matched. Note that because
+the regular expression matcher uses a buffer, using just \verb+seek(0, SEEK_CUR)+ would give the current position of the end of that buffer, and
+not the current position during regular expression matching. You have to use the \verb+REGEX_POS+ macro to get the correct position.
+ \item \verb+debug(...)+ Shows a debug message about what was found and where. This is extremely helpful when you start writing regular expressions, and
+nothing works: you can determine whether your regular expression matched at all, and if it matched where you thought it would.
+There is also a \verb+DEBUG_PRINT_MATCH+ that prints the entire matched string to the debug output.
+Of course before publishing the bytecode you might want to turn off these debug messages.
+ \item \verb+}+ closes the \emph{action} block for this regular expression
+ \item \verb+ANY { continue; }+ If none of the regular expressions matched so far, just keep running the matcher, at the next byte
+ \item \verb+*/+ closes the regular expression description block
+ \item \verb+}+ closes the \verb+for()+ loop
+\end{description}
+
+You may have multiple regular expressions, or declare multiple regular expressions with a name, and use those
+names to build more complex regular expressions.
+
+\subsection{Named regular expressions}
+
+
+\section{Writing unpackers}
+\label{sec:unpacker}
+\subsection{Structure of a bytecode for unpacking (and other hooks)}
+When writing an unpacker, the bytecode should consist of:
+\begin{itemize}
+ \item Define which hook you use (for example \verb+PE_UNPACKER_DECLARE+ for a PE hook)
+ \item An \verb+int entrypoint(void)+ function that reads the current file and unpacks it to a new file
+ \item Return 0 from \verb+entrypoint+ if you want the unpacked file to be scanned %TODO: how do we avoid infinite recursion
+% here, if the bytecode is invoked again, and unpacks something again? Or mutual recursion...
+%TODO: I don't call magicscandesc yet, until a solution is found here
+ \item (Optional) Other functions and global constants used by \verb+entrypoint+
+\end{itemize}
+
+\subsection{Detecting clam.exe via bytecode}
+Example provided by aCaB:
+\subsection{Detecting clam.exe via bytecode (disasm)}
+Example provided by aCaB:
+
+\label{prg:matchclamexedisasm}
+\subsection{A simple unpacker}
+\subsection{Matching PDF javascript}
+
+\subsection{YC unpacker rewritten as bytecode}

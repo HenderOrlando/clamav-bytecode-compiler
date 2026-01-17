@@ -1,0 +1,321 @@
+\hypertarget{bytecode__api_8h}{\subsection{bytecode\-\_\-api.\-h File Reference}
+\label{bytecode__api_8h}\index{bytecode\-\_\-api.\-h@{bytecode\-\_\-api.\-h}}
+}
+\subsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group__config_ga108e33201873c25ef45b59b519f1ff91}{Bytecode\-Kind} \{ \\*
+\hyperlink{group__config_gga108e33201873c25ef45b59b519f1ff91aff84fbd05d167a1cf9e146d155ac90b7}{B\-C\-\_\-\-G\-E\-N\-E\-R\-I\-C} =0, 
+\hyperlink{group__config_gga108e33201873c25ef45b59b519f1ff91a994c8f67c7dd938a35a6cf74d6ab8563}{B\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P} =1
+, \hyperlink{group__config_gga108e33201873c25ef45b59b519f1ff91aa6c849ba6dbd80a2af04a38eeea8d5c3}{B\-C\-\_\-\-L\-O\-G\-I\-C\-A\-L} =256, 
+\hyperlink{group__config_gga108e33201873c25ef45b59b519f1ff91ae6b6910f9706526e49807a022b7125f1}{B\-C\-\_\-\-P\-E\-\_\-\-U\-N\-P\-A\-C\-K\-E\-R}, 
+\\*
+\hyperlink{group__config_gga108e33201873c25ef45b59b519f1ff91a7cefa34095598f11058815262b1613ab}{B\-C\-\_\-\-P\-D\-F}, 
+\hyperlink{group__config_gga108e33201873c25ef45b59b519f1ff91aa88e602b789225c6a4fd1c13c3de770a}{B\-C\-\_\-\-P\-E\-\_\-\-A\-L\-L}, 
+\hyperlink{group__config_gga108e33201873c25ef45b59b519f1ff91acaadf43b9e1f0a95f0df39b39cee3ec0}{B\-C\-\_\-\-P\-R\-E\-C\-L\-A\-S\-S}
+ \}
+\item 
+enum \{ \hyperlink{group__pe_ga06fc87d81c62e9abb8790b6e5713c55bacb5d73f23c5c13bca1ae5fdfbaa22d43}{P\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-R\-V\-A} = 0x\-F\-F\-F\-F\-F\-F\-F\-F
+ \}
+\item 
+enum \hyperlink{group__config_gac2cd51dc61c1ddf642d596c7f73a6999}{Functionality\-Levels} \{ \\*
+\hyperlink{group__config_ggac2cd51dc61c1ddf642d596c7f73a6999acb29ce12011d960c8af57fbdc28e7d4d}{F\-U\-N\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-096} = 51
+, \hyperlink{group__config_ggac2cd51dc61c1ddf642d596c7f73a6999aa4aae1d4da2ad6aa8ffba0af3b7fa4c9}{F\-U\-N\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-096\-\_\-1} = 53
+, \hyperlink{group__config_ggac2cd51dc61c1ddf642d596c7f73a6999a44067def566983f447c7f4eeaa0fe4c5}{F\-U\-N\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-096\-\_\-2} = 54
+, \hyperlink{group__config_ggac2cd51dc61c1ddf642d596c7f73a6999a74e84af7370ca6ff9e9c917cef10da8f}{F\-U\-N\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-096\-\_\-3} = 55, 
+\\*
+\hyperlink{group__config_ggac2cd51dc61c1ddf642d596c7f73a6999a149225436086b51fdd98b4dede7292f2}{F\-U\-N\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-096\-\_\-4} = 56, 
+\hyperlink{group__config_ggac2cd51dc61c1ddf642d596c7f73a6999a45b2c4de5c8066a7516e2620ed4e9827}{F\-U\-N\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-096\-\_\-5} = 58, 
+\hyperlink{group__config_ggac2cd51dc61c1ddf642d596c7f73a6999a5d403f41a921c82da30772de0f917236}{F\-U\-N\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-097} = 60, 
+\hyperlink{group__config_ggac2cd51dc61c1ddf642d596c7f73a6999a71ae4a74f703d924d5b2814654b9b7a2}{F\-U\-N\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-097\-\_\-1} = 61, 
+\\*
+\hyperlink{group__config_ggac2cd51dc61c1ddf642d596c7f73a6999a53a37b4ba29dff3ac15ca9b06a45bd42}{F\-U\-N\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-097\-\_\-2} = 62, 
+\hyperlink{group__config_ggac2cd51dc61c1ddf642d596c7f73a6999a670689b623cf0c7500ad733ccf0f95c2}{F\-U\-N\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-097\-\_\-3} = 63, 
+\hyperlink{group__config_ggac2cd51dc61c1ddf642d596c7f73a6999a06afec54f994f3bf159c908b388b80ab}{F\-U\-N\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-097\-\_\-4} = 64, 
+\hyperlink{group__config_ggac2cd51dc61c1ddf642d596c7f73a6999adfc1171d1ee82e50df4867cf63e3f79e}{F\-U\-N\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-097\-\_\-5} = 65, 
+\\*
+\hyperlink{group__config_ggac2cd51dc61c1ddf642d596c7f73a6999adc681d49cf724cd321b27637c79e72d4}{F\-U\-N\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-097\-\_\-6} = 67, 
+\hyperlink{group__config_ggac2cd51dc61c1ddf642d596c7f73a6999a50c8294e9b8773beba1c2f88e089e5b9}{F\-U\-N\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-097\-\_\-7} = 68, 
+\hyperlink{group__config_ggac2cd51dc61c1ddf642d596c7f73a6999a89a2375f49e550652664e885a462069a}{F\-U\-N\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-097\-\_\-8} = 69, 
+\hyperlink{group__config_ggac2cd51dc61c1ddf642d596c7f73a6999ae5b0f38fa3f673c1289c53845e6a1f29}{F\-U\-N\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-098\-\_\-1} = 76, 
+\\*
+\hyperlink{group__config_ggac2cd51dc61c1ddf642d596c7f73a6999a5e256c95f0ce97d99e823790b829ecfa}{F\-U\-N\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-098\-\_\-2} = 77, 
+\hyperlink{group__config_ggac2cd51dc61c1ddf642d596c7f73a6999a675dcb47376b5a0766215d942861d430}{F\-U\-N\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-098\-\_\-3} = 77, 
+\hyperlink{group__config_ggac2cd51dc61c1ddf642d596c7f73a6999a993969ab876ecf33012f31458a3720f4}{F\-U\-N\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-098\-\_\-4} = 77, 
+\hyperlink{group__config_ggac2cd51dc61c1ddf642d596c7f73a6999aad4f9301e986abe94164694b9b1a195c}{F\-U\-N\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-098\-\_\-5} = 79, 
+\\*
+\hyperlink{group__config_ggac2cd51dc61c1ddf642d596c7f73a6999aac174f30a366a3a0fe1acc0bd89b78e0}{F\-U\-N\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-098\-\_\-6} = 79, 
+\hyperlink{group__config_ggac2cd51dc61c1ddf642d596c7f73a6999abf41cde08572ca649800d99a26382aa2}{F\-U\-N\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-098\-\_\-7} = 80
+ \}
+\item 
+enum \hyperlink{group__pdfg_ga8146b4e22199a811df993111bc8afc45}{pdf\-\_\-phase} \{ \\*
+\hyperlink{group__pdfg_gga8146b4e22199a811df993111bc8afc45a070005652d968670f58fe2c9356882e3}{P\-D\-F\-\_\-\-P\-H\-A\-S\-E\-\_\-\-N\-O\-N\-E}, 
+\hyperlink{group__pdfg_gga8146b4e22199a811df993111bc8afc45aa616ad300ea4dc8892bf7a911e16c1b9}{P\-D\-F\-\_\-\-P\-H\-A\-S\-E\-\_\-\-P\-A\-R\-S\-E\-D}, 
+\hyperlink{group__pdfg_gga8146b4e22199a811df993111bc8afc45a8b5369671512493af9518bcc8c6b2b32}{P\-D\-F\-\_\-\-P\-H\-A\-S\-E\-\_\-\-P\-O\-S\-T\-D\-U\-M\-P}, 
+\hyperlink{group__pdfg_gga8146b4e22199a811df993111bc8afc45a86369da63f5adcb36bdda01aa4995033}{P\-D\-F\-\_\-\-P\-H\-A\-S\-E\-\_\-\-E\-N\-D}, 
+\\*
+\hyperlink{group__pdfg_gga8146b4e22199a811df993111bc8afc45a24ede1bd978055eda313a291e2e3ed56}{P\-D\-F\-\_\-\-P\-H\-A\-S\-E\-\_\-\-P\-R\-E}
+ \}
+\item 
+enum \hyperlink{group__pdfg_ga5597245ed8666431babaa5371fe7e009}{pdf\-\_\-flag} 
+\item 
+enum \hyperlink{group__pdfg_gabf356e8393462916811603aaf950bf0a}{pdf\-\_\-objflags} 
+\item 
+enum \hyperlink{group__json_ga936375042c8c0e1e0b304f4a89bca395}{bc\-\_\-json\-\_\-type} 
+\item 
+enum \{ \hyperlink{group__fileops_ggadf764cbdea00d65edcd07bb9953ad2b7a7f53e3798ec48e79c0897ba5138f9b05}{S\-E\-E\-K\-\_\-\-S\-E\-T} =0, 
+\hyperlink{group__fileops_ggadf764cbdea00d65edcd07bb9953ad2b7af3091144c125782cf17bcd3eb84e454c}{S\-E\-E\-K\-\_\-\-C\-U\-R}, 
+\hyperlink{group__fileops_ggadf764cbdea00d65edcd07bb9953ad2b7a060e45245be703e272d7264bafcfdc63}{S\-E\-E\-K\-\_\-\-E\-N\-D}
+ \}
+\end{DoxyCompactItemize}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\-\_\-t \hyperlink{bytecode__api_8h_af445932f85a581e254806f034225ecf1}{test1} (uint32\-\_\-t a, uint32\-\_\-t b)
+\item 
+int32\-\_\-t \hyperlink{group__fileops_gafa4f1c799291804204aea54ce23077d6}{read} (uint8\-\_\-t $\ast$data, int32\-\_\-t size)
+\item 
+int32\-\_\-t \hyperlink{group__fileops_ga01d98e416d08e0eabd02d2e8aa56f28e}{write} (uint8\-\_\-t $\ast$data, int32\-\_\-t size)
+\item 
+int32\-\_\-t \hyperlink{group__fileops_gaac5ea598a656985291c56321ad2140ea}{seek} (int32\-\_\-t pos, uint32\-\_\-t whence)
+\item 
+uint32\-\_\-t \hyperlink{group__scanc_ga77cd19560715e7a2f658fc3ac519d18e}{setvirusname} (const uint8\-\_\-t $\ast$name, uint32\-\_\-t len)
+\item 
+uint32\-\_\-t \hyperlink{group__debug_gaa6d82179ea15d32450fefbc6d1bd8934}{debug\-\_\-print\-\_\-str} (const uint8\-\_\-t $\ast$str, uint32\-\_\-t len)
+\item 
+uint32\-\_\-t \hyperlink{group__debug_ga6e0cdd4d4c76ed46a8627bee56eee1c1}{debug\-\_\-print\-\_\-uint} (uint32\-\_\-t a)
+\item 
+uint32\-\_\-t \hyperlink{group__disasm_ga95e7d1048a56c98dec19335a6aa7afca}{disasm\-\_\-x86} (struct \hyperlink{struct_d_i_s_a_s_m___r_e_s_u_l_t}{D\-I\-S\-A\-S\-M\-\_\-\-R\-E\-S\-U\-L\-T} $\ast$result, uint32\-\_\-t len)
+\item 
+uint32\-\_\-t \hyperlink{group__pe_ga0d081f8f58263eb99d68690f1f9b2a81}{pe\-\_\-rawaddr} (uint32\-\_\-t rva)
+\item 
+int32\-\_\-t \hyperlink{group__fileops_ga56355a07d9fb739dd483dd756f7fe821}{file\-\_\-find} (const uint8\-\_\-t $\ast$data, uint32\-\_\-t len)
+\item 
+int32\-\_\-t \hyperlink{group__fileops_ga1e192cd4fe94e68dbac5023a1e2481c9}{file\-\_\-byteat} (uint32\-\_\-t offset)
+\item 
+void $\ast$ \hyperlink{group__adt_ga8704c31c2d7a73953f3c1c320447c24a}{malloc} (uint32\-\_\-t size)
+\item 
+uint32\-\_\-t \hyperlink{bytecode__api_8h_abf709b9bcdfd2da159ec288df9dc7ad9}{test2} (uint32\-\_\-t a)
+\item 
+int32\-\_\-t \hyperlink{group__pe_gae7e5e9cef42c34a52cfe814910a1e293}{get\-\_\-pe\-\_\-section} (struct \hyperlink{structcli__exe__section}{cli\-\_\-exe\-\_\-section} $\ast$section, uint32\-\_\-t num)
+\item 
+int32\-\_\-t \hyperlink{group__fileops_ga5c25c11f12899883af10f3ba75cfc5c5}{fill\-\_\-buffer} (uint8\-\_\-t $\ast$buffer, uint32\-\_\-t len, uint32\-\_\-t filled, uint32\-\_\-t cursor, uint32\-\_\-t fill)
+\item 
+int32\-\_\-t \hyperlink{group__scanc_gaed98502eb13f9e2209d9c6b1620eb17a}{extract\-\_\-new} (int32\-\_\-t id)
+\item 
+int32\-\_\-t \hyperlink{group__fileops_ga50b84b15fbaf03aa39b41ef7ffb5243e}{read\-\_\-number} (uint32\-\_\-t radix)
+\item 
+int32\-\_\-t \hyperlink{group__adt_gab791b1626efae568e0fb62c36ce8aa74}{hashset\-\_\-new} (void)
+\item 
+int32\-\_\-t \hyperlink{group__adt_gadb42ee13e5883410846a392513d6866b}{hashset\-\_\-add} (int32\-\_\-t hs, uint32\-\_\-t key)
+\item 
+int32\-\_\-t \hyperlink{group__adt_ga06c14cce8ec4cc839a02094547964a00}{hashset\-\_\-remove} (int32\-\_\-t hs, uint32\-\_\-t key)
+\item 
+int32\-\_\-t \hyperlink{group__adt_ga0907920e08ec8e80f3ff829e8aaf58de}{hashset\-\_\-contains} (int32\-\_\-t hs, uint32\-\_\-t key)
+\item 
+int32\-\_\-t \hyperlink{group__adt_gabd5e701c80bf5346a72fb145834b865a}{hashset\-\_\-done} (int32\-\_\-t id)
+\item 
+int32\-\_\-t \hyperlink{group__adt_ga854fcc65ad8cc0578c55aea6bc88b193}{hashset\-\_\-empty} (int32\-\_\-t id)
+\item 
+int32\-\_\-t \hyperlink{group__adt_gae755b425ff65feddef7b86092dcdeed7}{buffer\-\_\-pipe\-\_\-new} (uint32\-\_\-t size)
+\item 
+int32\-\_\-t \hyperlink{group__adt_gadccae1152247859c54706b7d1753b689}{buffer\-\_\-pipe\-\_\-new\-\_\-fromfile} (uint32\-\_\-t pos)
+\item 
+uint32\-\_\-t \hyperlink{group__adt_ga53de1d976b1536c5b6a0d5d31de201b2}{buffer\-\_\-pipe\-\_\-read\-\_\-avail} (int32\-\_\-t id)
+\item 
+const uint8\-\_\-t $\ast$ \hyperlink{group__adt_ga54cd26b62a0d16082b8909b110d605b3}{buffer\-\_\-pipe\-\_\-read\-\_\-get} (int32\-\_\-t id, uint32\-\_\-t amount)
+\item 
+int32\-\_\-t \hyperlink{group__adt_gae67b360d1ab3c9dc4ac9d0f90208f6fe}{buffer\-\_\-pipe\-\_\-read\-\_\-stopped} (int32\-\_\-t id, uint32\-\_\-t amount)
+\item 
+uint32\-\_\-t \hyperlink{group__adt_ga1b9d87fbb40620d92b57549e24b189e6}{buffer\-\_\-pipe\-\_\-write\-\_\-avail} (int32\-\_\-t id)
+\item 
+uint8\-\_\-t $\ast$ \hyperlink{group__adt_ga8268aaabee12eed25ab561f678128ddd}{buffer\-\_\-pipe\-\_\-write\-\_\-get} (int32\-\_\-t id, uint32\-\_\-t size)
+\item 
+int32\-\_\-t \hyperlink{group__adt_ga57b76f82f0fb9bdabaad6c3d98037e94}{buffer\-\_\-pipe\-\_\-write\-\_\-stopped} (int32\-\_\-t id, uint32\-\_\-t amount)
+\item 
+int32\-\_\-t \hyperlink{group__adt_ga984890c1d3b68b99e68c2e6b1a7704d0}{buffer\-\_\-pipe\-\_\-done} (int32\-\_\-t id)
+\item 
+int32\-\_\-t \hyperlink{group__adt_ga65eec3722a1e992e9e4104c037503fdc}{inflate\-\_\-init} (int32\-\_\-t from\-\_\-buffer, int32\-\_\-t to\-\_\-buffer, int32\-\_\-t window\-Bits)
+\item 
+int32\-\_\-t \hyperlink{group__adt_ga10ad344e58c26566defe1780b303f0a4}{inflate\-\_\-process} (int32\-\_\-t id)
+\item 
+int32\-\_\-t \hyperlink{group__adt_ga123c12ca76a5b736217b68fdb126066e}{inflate\-\_\-done} (int32\-\_\-t id)
+\item 
+int32\-\_\-t \hyperlink{group__scanc_gad7ea886d4274f1f389acf0d5cdc50b7d}{bytecode\-\_\-rt\-\_\-error} (int32\-\_\-t locationid)
+\item 
+int32\-\_\-t \hyperlink{group__js_gafb97628e1638c524b0cf45190403553d}{jsnorm\-\_\-init} (int32\-\_\-t from\-\_\-buffer)
+\item 
+int32\-\_\-t \hyperlink{group__js_ga5c0da722aa4ccb9618052c5a2361ed8e}{jsnorm\-\_\-process} (int32\-\_\-t id)
+\item 
+int32\-\_\-t \hyperlink{group__js_ga7445bceea42b0a4d1d841b2c8826db4a}{jsnorm\-\_\-done} (int32\-\_\-t id)
+\item 
+int32\-\_\-t \hyperlink{group__math_ga59893a4520a13171c94d6ce63fce6c4b}{ilog2} (uint32\-\_\-t a, uint32\-\_\-t b)
+\item 
+int32\-\_\-t \hyperlink{group__math_gabd69b1aa30157a6d87658db53ece8f5a}{ipow} (int32\-\_\-t a, int32\-\_\-t b, int32\-\_\-t c)
+\item 
+uint32\-\_\-t \hyperlink{group__math_ga5d986d8e22cce16cfd2bb0cef0ac111e}{iexp} (int32\-\_\-t a, int32\-\_\-t b, int32\-\_\-t c)
+\item 
+int32\-\_\-t \hyperlink{group__math_gacca08245d3d1a190375a92d5c51b2a90}{isin} (int32\-\_\-t a, int32\-\_\-t b, int32\-\_\-t c)
+\item 
+int32\-\_\-t \hyperlink{group__math_ga6aeece8bfb39a8499b44d67c8bebb716}{icos} (int32\-\_\-t a, int32\-\_\-t b, int32\-\_\-t c)
+\item 
+int32\-\_\-t \hyperlink{group__stringops_ga5d46e3fbbec8277f894d998a9b0dfdbc}{memstr} (const uint8\-\_\-t $\ast$haystack, int32\-\_\-t haysize, const uint8\-\_\-t $\ast$needle, int32\-\_\-t needlesize)
+\item 
+int32\-\_\-t \hyperlink{group__stringops_ga231265b2ef73573c38d51a385697ae57}{hex2ui} (uint32\-\_\-t hex1, uint32\-\_\-t hex2)
+\item 
+int32\-\_\-t \hyperlink{group__stringops_gaa07799442f1560666449446eac438ee4}{atoi} (const uint8\-\_\-t $\ast$str, int32\-\_\-t size)
+\item 
+uint32\-\_\-t \hyperlink{group__debug_ga43707290a22915315c960422a88ba4d4}{debug\-\_\-print\-\_\-str\-\_\-start} (const uint8\-\_\-t $\ast$str, uint32\-\_\-t len)
+\item 
+uint32\-\_\-t \hyperlink{group__debug_ga02f173e084fc9a4b9eaf3017aa4243ba}{debug\-\_\-print\-\_\-str\-\_\-nonl} (const uint8\-\_\-t $\ast$str, uint32\-\_\-t len)
+\item 
+uint32\-\_\-t \hyperlink{group__stringops_ga2df1f1f4823085b4956f1bce3f5b059c}{entropy\-\_\-buffer} (uint8\-\_\-t $\ast$buffer, int32\-\_\-t size)
+\item 
+int32\-\_\-t \hyperlink{group__adt_ga8350ff5a10c6d2b8aa5c9b20bd0b032f}{map\-\_\-new} (int32\-\_\-t keysize, int32\-\_\-t valuesize)
+\item 
+int32\-\_\-t \hyperlink{group__adt_ga962d8bc4658ba7dd411c75d7561c2fee}{map\-\_\-addkey} (const uint8\-\_\-t $\ast$key, int32\-\_\-t ksize, int32\-\_\-t id)
+\item 
+int32\-\_\-t \hyperlink{group__adt_gafdae99c4fa909e017962e8b869950005}{map\-\_\-setvalue} (const uint8\-\_\-t $\ast$value, int32\-\_\-t vsize, int32\-\_\-t id)
+\item 
+int32\-\_\-t \hyperlink{group__adt_gaeadbaac505160a820fe766cdaf95aba6}{map\-\_\-remove} (const uint8\-\_\-t $\ast$key, int32\-\_\-t ksize, int32\-\_\-t id)
+\item 
+int32\-\_\-t \hyperlink{group__adt_gac45a2c7ac861578b8001b2116eee10aa}{map\-\_\-find} (const uint8\-\_\-t $\ast$key, int32\-\_\-t ksize, int32\-\_\-t id)
+\item 
+int32\-\_\-t \hyperlink{group__adt_gaac4176bebb0d4896ad64452bec023012}{map\-\_\-getvaluesize} (int32\-\_\-t id)
+\item 
+uint8\-\_\-t $\ast$ \hyperlink{group__adt_ga6a8bbb58c0ccad537eec575949e5f9f7}{map\-\_\-getvalue} (int32\-\_\-t id, int32\-\_\-t size)
+\item 
+int32\-\_\-t \hyperlink{group__adt_ga2603885df2096dc840d887461c3b1aac}{map\-\_\-done} (int32\-\_\-t id)
+\item 
+int32\-\_\-t \hyperlink{group__fileops_gad7479f2fd346e59217f50726be9502a3}{file\-\_\-find\-\_\-limit} (const uint8\-\_\-t $\ast$data, uint32\-\_\-t len, int32\-\_\-t maxpos)
+\item 
+uint32\-\_\-t \hyperlink{group__engineq_gaddc54afadb3d660c92e4e350548086d8}{engine\-\_\-functionality\-\_\-level} (void)
+\item 
+uint32\-\_\-t \hyperlink{group__engineq_ga4fa59c900fefd4a4441fcc4b3e44830d}{engine\-\_\-dconf\-\_\-level} (void)
+\item 
+uint32\-\_\-t \hyperlink{group__engineq_ga0cd507ebdbadaa5899ca032cb5f69e3c}{engine\-\_\-scan\-\_\-options} (void)
+\item 
+uint32\-\_\-t \hyperlink{group__engineq_gafc1eab4e86797378b5c1e7186894c1a7}{engine\-\_\-db\-\_\-options} (void)
+\item 
+int32\-\_\-t \hyperlink{group__scanc_ga0f6e898d3a55355835fccb1f6d15abc1}{extract\-\_\-set\-\_\-container} (uint32\-\_\-t container)
+\item 
+int32\-\_\-t \hyperlink{group__scanc_ga86179c9beb10be3f66cb5cae9902fec3}{input\-\_\-switch} (int32\-\_\-t extracted\-\_\-file)
+\item 
+uint32\-\_\-t \hyperlink{group__envdet_ga4e38f5731d8d7578399d6bcf97ec1a27}{get\-\_\-environment} (struct cli\-\_\-environment $\ast$env, uint32\-\_\-t len)
+\item 
+uint32\-\_\-t \hyperlink{group__envdet_ga1b9af8b47763bc3e2d0323a605209702}{disable\-\_\-bytecode\-\_\-if} (const int8\-\_\-t $\ast$reason, uint32\-\_\-t len, uint32\-\_\-t cond)
+\item 
+uint32\-\_\-t \hyperlink{group__envdet_gacccb9f64252a40f3857007f0e382f8eb}{disable\-\_\-jit\-\_\-if} (const int8\-\_\-t $\ast$reason, uint32\-\_\-t len, uint32\-\_\-t cond)
+\item 
+int32\-\_\-t \hyperlink{group__envdet_ga18a8ecdd5235c80782b7e3e1892553ef}{version\-\_\-compare} (const uint8\-\_\-t $\ast$lhs, uint32\-\_\-t lhs\-\_\-len, const uint8\-\_\-t $\ast$rhs, uint32\-\_\-t rhs\-\_\-len)
+\item 
+uint32\-\_\-t \hyperlink{group__envdet_ga9b52373152ee8dd8fd45ea6b242e5698}{check\-\_\-platform} (uint32\-\_\-t a, uint32\-\_\-t b, uint32\-\_\-t c)
+\item 
+int32\-\_\-t \hyperlink{group__pdfg_gaca9074092cae6ed378ffdc5ba7cfc77e}{pdf\-\_\-get\-\_\-obj\-\_\-num} (void)
+\item 
+int32\-\_\-t \hyperlink{group__pdfg_ga854b697b5e662b79c5931a7864ce0709}{pdf\-\_\-get\-\_\-flags} (void)
+\item 
+int32\-\_\-t \hyperlink{group__pdfg_ga1524216162135a13acfecc0cbc82ac03}{pdf\-\_\-set\-\_\-flags} (int32\-\_\-t flags)
+\item 
+int32\-\_\-t \hyperlink{group__pdfg_ga06f5560acc053270453250c387692068}{pdf\-\_\-lookupobj} (uint32\-\_\-t id)
+\item 
+uint32\-\_\-t \hyperlink{group__pdfg_ga0270605365fe5bb2f721eefe6f703255}{pdf\-\_\-getobjsize} (int32\-\_\-t objidx)
+\item 
+const uint8\-\_\-t $\ast$ \hyperlink{group__pdfg_ga4c8b0da8762409c1bfe3163d5c3713ff}{pdf\-\_\-getobj} (int32\-\_\-t objidx, uint32\-\_\-t amount)
+\item 
+int32\-\_\-t \hyperlink{group__pdfg_gaf6943177dc18c5d6012f1847810ebd4c}{pdf\-\_\-getobjid} (int32\-\_\-t objidx)
+\item 
+int32\-\_\-t \hyperlink{group__pdfg_ga9845af73f396e2dea666da3360c9b1c9}{pdf\-\_\-getobjflags} (int32\-\_\-t objidx)
+\item 
+int32\-\_\-t \hyperlink{group__pdfg_ga7b4b1a1e1e8e7e0a7734d6e3585f9bc2}{pdf\-\_\-setobjflags} (int32\-\_\-t objidx, int32\-\_\-t flags)
+\item 
+int32\-\_\-t \hyperlink{group__pdfg_ga4ecff9d01377ead41921e18747a59426}{pdf\-\_\-get\-\_\-offset} (int32\-\_\-t objidx)
+\item 
+int32\-\_\-t \hyperlink{group__pdfg_gaf7eb372ae4bc42a552e543ea2a306f5e}{pdf\-\_\-get\-\_\-phase} (void)
+\item 
+int32\-\_\-t \hyperlink{group__pdfg_gaaa88ff051b0da6314c9655da624bb0f5}{pdf\-\_\-get\-\_\-dumpedobjid} (void)
+\item 
+int32\-\_\-t \hyperlink{group__icon_ga8e0bc8430adb57c0808bbf916e49185f}{matchicon} (const uint8\-\_\-t $\ast$group1, int32\-\_\-t group1\-\_\-len, const uint8\-\_\-t $\ast$group2, int32\-\_\-t group2\-\_\-len)
+\item 
+int32\-\_\-t \hyperlink{group__engineq_ga150727e2ce2b5ed7371e3a7689337894}{running\-\_\-on\-\_\-jit} (void)
+\item 
+int32\-\_\-t \hyperlink{group__fileops_ga5cee98dc9edde5bfbc107cbd304a4209}{get\-\_\-file\-\_\-reliability} (void)
+\item 
+int32\-\_\-t \hyperlink{group__json_gab590cf1a4d93ba3f25df38edd0e526c8}{json\-\_\-is\-\_\-active} (void)
+\item 
+int32\-\_\-t \hyperlink{group__json_ga627d713e6c9baa49ee3ea13c9d18e34a}{json\-\_\-get\-\_\-object} (const int8\-\_\-t $\ast$name, int32\-\_\-t name\-\_\-len, int32\-\_\-t objid)
+\item 
+int32\-\_\-t \hyperlink{group__json_gafa4a1feef05495ec9bae2eb79a7cb602}{json\-\_\-get\-\_\-type} (int32\-\_\-t objid)
+\item 
+int32\-\_\-t \hyperlink{group__json_ga70d3420a0ed6282786354348e05c717b}{json\-\_\-get\-\_\-array\-\_\-length} (int32\-\_\-t objid)
+\item 
+int32\-\_\-t \hyperlink{group__json_ga51481f2d23e50f87ddd09abcb5374704}{json\-\_\-get\-\_\-array\-\_\-idx} (int32\-\_\-t idx, int32\-\_\-t objid)
+\item 
+int32\-\_\-t \hyperlink{group__json_ga44d0e989cd137e91e9a2b35646ecc4d8}{json\-\_\-get\-\_\-string\-\_\-length} (int32\-\_\-t objid)
+\item 
+int32\-\_\-t \hyperlink{group__json_ga57e3593c4d5b17bf646c4991ca9c5b0b}{json\-\_\-get\-\_\-string} (int8\-\_\-t $\ast$str, int32\-\_\-t str\-\_\-len, int32\-\_\-t objid)
+\item 
+int32\-\_\-t \hyperlink{group__json_gaa111424d796fd5c69be5cabde9d55b01}{json\-\_\-get\-\_\-boolean} (int32\-\_\-t objid)
+\item 
+int32\-\_\-t \hyperlink{group__json_ga73adebc2a9379f1625e64b3a9982cfa4}{json\-\_\-get\-\_\-int} (int32\-\_\-t objid)
+\end{DoxyCompactItemize}
+\subsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const uint32\-\_\-t \hyperlink{group__globals_ga35a0a4f1219a792c77b7207924c3c4ec}{\-\_\-\-\_\-clambc\-\_\-match\-\_\-counts} \mbox{[}64\mbox{]}
+\begin{DoxyCompactList}\small\item\em This is a low-\/level variable, use the Macros in \hyperlink{bytecode__local_8h}{bytecode\-\_\-local.\-h} instead to access it. \end{DoxyCompactList}\item 
+const uint32\-\_\-t \hyperlink{group__globals_gae39872934c5879706b3cedaef090d227}{\-\_\-\-\_\-clambc\-\_\-match\-\_\-offsets} \mbox{[}64\mbox{]}
+\begin{DoxyCompactList}\small\item\em This is a low-\/level variable, use the Macros in \hyperlink{bytecode__local_8h}{bytecode\-\_\-local.\-h} instead to access it. \end{DoxyCompactList}\item 
+const struct \hyperlink{structcli__pe__hook__data}{cli\-\_\-pe\-\_\-hook\-\_\-data} \hyperlink{group__globals_ga7a72f243ec3f5daf5a337e2fc86bc2ad}{\-\_\-\-\_\-clambc\-\_\-pedata}
+\item 
+const uint32\-\_\-t \hyperlink{group__globals_gab8d6c50474be3ba69906161a3e520ce7}{\-\_\-\-\_\-clambc\-\_\-filesize} \mbox{[}1\mbox{]}
+\item 
+const uint16\-\_\-t \hyperlink{group__globals_ga6eb3802e21949cfdf6b91570d3c62c99}{\-\_\-\-\_\-clambc\-\_\-kind}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Enumeration Type Documentation}
+\hypertarget{bytecode__api_8h_a06fc87d81c62e9abb8790b6e5713c55b}{\paragraph[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}\label{bytecode__api_8h_a06fc87d81c62e9abb8790b6e5713c55b}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{P\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-R\-V\-A@{P\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-R\-V\-A}!bytecode\-\_\-api.\-h@{bytecode\-\_\-api.\-h}}\index{bytecode\-\_\-api.\-h@{bytecode\-\_\-api.\-h}!P\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-R\-V\-A@{P\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-R\-V\-A}}\item[{\em 
+\hypertarget{bytecode__api_8h_ga06fc87d81c62e9abb8790b6e5713c55bacb5d73f23c5c13bca1ae5fdfbaa22d43}{P\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-R\-V\-A}\label{bytecode__api_8h_ga06fc87d81c62e9abb8790b6e5713c55bacb5d73f23c5c13bca1ae5fdfbaa22d43}
+}]Invalid R\-V\-A specified \end{description}
+\end{Desc}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{bytecode__api_8h_af445932f85a581e254806f034225ecf1}{\index{bytecode\-\_\-api.\-h@{bytecode\-\_\-api.\-h}!test1@{test1}}
+\index{test1@{test1}!bytecode_api.h@{bytecode\-\_\-api.\-h}}
+\paragraph[{test1}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t test1 (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{a, }
+\item[{uint32\-\_\-t}]{b}
+\end{DoxyParamCaption}
+)}}\label{bytecode__api_8h_af445932f85a581e254806f034225ecf1}
+Test api. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & 0xf00dbeef \\
+\hline
+\mbox{\tt in}  & {\em b} & 0xbeeff00d \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0x12345678 if parameters match, 0x55 otherwise 
+\end{DoxyReturn}
+\hypertarget{bytecode__api_8h_abf709b9bcdfd2da159ec288df9dc7ad9}{\index{bytecode\-\_\-api.\-h@{bytecode\-\_\-api.\-h}!test2@{test2}}
+\index{test2@{test2}!bytecode_api.h@{bytecode\-\_\-api.\-h}}
+\paragraph[{test2}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t test2 (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{a}
+\end{DoxyParamCaption}
+)}}\label{bytecode__api_8h_abf709b9bcdfd2da159ec288df9dc7ad9}
+Test api2. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & 0xf00d \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0xd00f if parameter matches, 0x5555 otherwise 
+\end{DoxyReturn}

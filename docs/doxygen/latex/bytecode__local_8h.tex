@@ -1,0 +1,252 @@
+\hypertarget{bytecode__local_8h}{\subsection{bytecode\-\_\-local.\-h File Reference}
+\label{bytecode__local_8h}\index{bytecode\-\_\-local.\-h@{bytecode\-\_\-local.\-h}}
+}
+\subsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_d_i_s__mem__arg}{D\-I\-S\-\_\-mem\-\_\-arg}
+\item 
+struct \hyperlink{struct_d_i_s__arg}{D\-I\-S\-\_\-arg}
+\item 
+struct \hyperlink{struct_d_i_s__fixed}{D\-I\-S\-\_\-fixed}
+\end{DoxyCompactItemize}
+\subsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__config_gaf46256c8838bde91b834ae7323f325c9}{V\-I\-R\-U\-S\-N\-A\-M\-E\-\_\-\-P\-R\-E\-F\-I\-X}(name)~const char \-\_\-\-\_\-clambc\-\_\-virusname\-\_\-prefix\mbox{[}$\,$\mbox{]} = name;
+\item 
+\#define \hyperlink{group__config_ga07e03751d8c0faf422b28d7138f69a57}{V\-I\-R\-U\-S\-N\-A\-M\-E\-S}(...)~const char $\ast$const \-\_\-\-\_\-clambc\-\_\-virusnames\mbox{[}$\,$\mbox{]} = \{\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-\};
+\item 
+\#define \hyperlink{group__config_gadab197e0485a688211ac7f6add222691}{P\-E\-\_\-\-U\-N\-P\-A\-C\-K\-E\-R\-\_\-\-D\-E\-C\-L\-A\-R\-E}~const uint16\-\_\-t \hyperlink{group__globals_ga6eb3802e21949cfdf6b91570d3c62c99}{\-\_\-\-\_\-clambc\-\_\-kind} = \hyperlink{group__config_gga108e33201873c25ef45b59b519f1ff91ae6b6910f9706526e49807a022b7125f1}{B\-C\-\_\-\-P\-E\-\_\-\-U\-N\-P\-A\-C\-K\-E\-R};
+\item 
+\#define \hyperlink{group__config_ga96c0aeeec87fbf8c08a2dd17c86f4cb0}{P\-D\-F\-\_\-\-H\-O\-O\-K\-\_\-\-D\-E\-C\-L\-A\-R\-E}~const uint16\-\_\-t \hyperlink{group__globals_ga6eb3802e21949cfdf6b91570d3c62c99}{\-\_\-\-\_\-clambc\-\_\-kind} = \hyperlink{group__config_gga108e33201873c25ef45b59b519f1ff91a7cefa34095598f11058815262b1613ab}{B\-C\-\_\-\-P\-D\-F};
+\item 
+\#define \hyperlink{bytecode__local_8h_a6b52cfd01216f68d830d874feb25e07c}{B\-Y\-T\-E\-C\-O\-D\-E\-\_\-\-A\-B\-O\-R\-T\-\_\-\-H\-O\-O\-K}~0xcea5e
+\item 
+\#define \hyperlink{group__config_gaab7294d18a5e7d7c16234c4afe573d44}{P\-E\-\_\-\-H\-O\-O\-K\-\_\-\-D\-E\-C\-L\-A\-R\-E}~const uint16\-\_\-t \hyperlink{group__globals_ga6eb3802e21949cfdf6b91570d3c62c99}{\-\_\-\-\_\-clambc\-\_\-kind} = \hyperlink{group__config_gga108e33201873c25ef45b59b519f1ff91aa88e602b789225c6a4fd1c13c3de770a}{B\-C\-\_\-\-P\-E\-\_\-\-A\-L\-L};
+\item 
+\#define \hyperlink{group__config_gaa9b59bf0d0160a6010d17f0773df2323}{P\-R\-E\-C\-L\-A\-S\-S\-\_\-\-H\-O\-O\-K\-\_\-\-D\-E\-C\-L\-A\-R\-E}~const uint16\-\_\-t \hyperlink{group__globals_ga6eb3802e21949cfdf6b91570d3c62c99}{\-\_\-\-\_\-clambc\-\_\-kind} = \hyperlink{group__config_gga108e33201873c25ef45b59b519f1ff91acaadf43b9e1f0a95f0df39b39cee3ec0}{B\-C\-\_\-\-P\-R\-E\-C\-L\-A\-S\-S};
+\item 
+\#define \hyperlink{group__config_ga9d8dab26434a3a759f8934956f87c822}{S\-I\-G\-N\-A\-T\-U\-R\-E\-S\-\_\-\-D\-E\-C\-L\-\_\-\-B\-E\-G\-I\-N}~struct \-\_\-\-\_\-\-Signatures \{
+\item 
+\#define \hyperlink{group__config_ga9cc5358469543c230937ff04cb545a72}{D\-E\-C\-L\-A\-R\-E\-\_\-\-S\-I\-G\-N\-A\-T\-U\-R\-E}(name)
+\item 
+\#define \hyperlink{group__config_ga75c0ab3e5d9f66a1e134c823200d295d}{S\-I\-G\-N\-A\-T\-U\-R\-E\-S\-\_\-\-D\-E\-C\-L\-\_\-\-E\-N\-D}~\};
+\item 
+\#define \hyperlink{group__config_ga8f4214a187b6ecb97ad7eef2317ebd3f}{T\-A\-R\-G\-E\-T}(tgt)~const unsigned short \-\_\-\-\_\-\-Target = (tgt);
+\item 
+\#define \hyperlink{group__config_ga07318d0dd98e1eea463bb91dcbca277c}{C\-O\-P\-Y\-R\-I\-G\-H\-T}(c)~const char $\ast$const \-\_\-\-\_\-\-Copyright = (c);
+\item 
+\#define \hyperlink{group__config_ga543de9b69d68ba528f60634777f72a5d}{I\-C\-O\-N\-G\-R\-O\-U\-P1}(group)~const char $\ast$const \-\_\-\-\_\-\-Icon\-Group1 = (group);
+\item 
+\#define \hyperlink{group__config_ga655d7e9c6fcfec9b860d0acc56066326}{I\-C\-O\-N\-G\-R\-O\-U\-P2}(group)~const char $\ast$const \-\_\-\-\_\-\-Icon\-Group2 = (group);
+\item 
+\#define \hyperlink{group__config_ga550536f35a9af1cf46db818baffe7912}{F\-U\-N\-C\-T\-I\-O\-N\-A\-L\-I\-T\-Y\-\_\-\-L\-E\-V\-E\-L\-\_\-\-M\-I\-N}(m)~const unsigned short \-\_\-\-\_\-\-Func\-Min = (m);
+\item 
+\#define \hyperlink{group__config_gafc471efa427277a2b96a2a06ba647aa9}{F\-U\-N\-C\-T\-I\-O\-N\-A\-L\-I\-T\-Y\-\_\-\-L\-E\-V\-E\-L\-\_\-\-M\-A\-X}(m)~const unsigned short \-\_\-\-\_\-\-Func\-Max = (m);
+\item 
+\#define \hyperlink{group__config_gaf75911dca13ab8a873fe2bafd57a705a}{S\-I\-G\-N\-A\-T\-U\-R\-E\-S\-\_\-\-D\-E\-F\-\_\-\-B\-E\-G\-I\-N}
+\item 
+\#define \hyperlink{bytecode__local_8h_ac9b976f78a0dac8a6996cbb31571044f}{S\-I\-G\-N\-A\-T\-U\-R\-E\-S\-\_\-\-E\-N\-D}~\};
+\item 
+\#define \hyperlink{group__config_ga15dbfa6fb4163f7ee0a62229c7b8a853}{S\-I\-G\-N\-A\-T\-U\-R\-E\-S\-\_\-\-D\-E\-F\-\_\-\-E\-N\-D}~\};
+\end{DoxyCompactItemize}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static force\-\_\-inline void \\*
+overloadable\-\_\-func \hyperlink{group__debug_gad98902cb1411dcb98f8a05c15f881f68}{debug} (const char $\ast$str)
+\item 
+static force\-\_\-inline void \\*
+overloadable\-\_\-func \hyperlink{group__debug_ga0c4f0f407c72cc2f299fa5afe7251e7c}{debug} (const uint8\-\_\-t $\ast$str)
+\item 
+static force\-\_\-inline void \\*
+overloadable\-\_\-func \hyperlink{group__debug_ga49c09fe4114c60b1ebaa6b983fd1f0e7}{debug} (uint32\-\_\-t a)
+\item 
+void \hyperlink{group__debug_ga37106786ad5566aa9fd1c8c1a0293029}{debug} (...) \-\_\-\-\_\-attribute\-\_\-\-\_\-((overloadable
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__engineq_ga3bee86d89c2e0d16b706f62ec0c2d716}{count\-\_\-match} (\-\_\-\-\_\-\-Signature sig)
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__engineq_gafb7a07b6a6a5826f43f624fa1af2a8c6}{matches} (\-\_\-\-\_\-\-Signature sig)
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__engineq_ga0731ae7f531521a4c8609d75a21d3edd}{match\-\_\-location} (\-\_\-\-\_\-\-Signature sig, uint32\-\_\-t goback)
+\item 
+static force\-\_\-inline int32\-\_\-t \hyperlink{group__engineq_gae815c917305f5ce574b0e759f605819b}{match\-\_\-location\-\_\-check} (\-\_\-\-\_\-\-Signature sig, uint32\-\_\-t goback, const char $\ast$static\-\_\-start, uint32\-\_\-t static\-\_\-len)
+\item 
+static force\-\_\-inline \\*
+overloadable\-\_\-func void \hyperlink{group__scanc_ga95f6c4104903cf54fead01646fd7f9d2}{found\-Virus} (const char $\ast$virusname)
+\item 
+static force\-\_\-inline void \\*
+overloadable\-\_\-func \hyperlink{bytecode__local_8h_ad81d7009247e53d5074a464b3a59454c}{found\-Virus} (void)
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__fileops_ga4dfb3482a7f04ae1e51942755253d720}{get\-Filesize} (void)
+\item 
+bool \hyperlink{group__envdet_gaf3a7e5cbd0c798faf98a03ee7c72e661}{\-\_\-\-\_\-is\-\_\-bigendian} (void) \-\_\-\-\_\-attribute\-\_\-\-\_\-((const )) \-\_\-\-\_\-attribute\-\_\-\-\_\-((nothrow))
+\item 
+static uint32\-\_\-t force\-\_\-inline \hyperlink{group__envdet_ga9d6c63ead621ba606fe4d01b4558a9dc}{le32\-\_\-to\-\_\-host} (uint32\-\_\-t v)
+\item 
+static uint32\-\_\-t force\-\_\-inline \hyperlink{group__envdet_gafe5142b3faa86e7657896beed56bf2a3}{be32\-\_\-to\-\_\-host} (uint32\-\_\-t v)
+\item 
+static uint64\-\_\-t force\-\_\-inline \hyperlink{group__envdet_ga574fdd0c27b3c4d8289f346edb2ffc2e}{le64\-\_\-to\-\_\-host} (uint64\-\_\-t v)
+\item 
+static uint64\-\_\-t force\-\_\-inline \hyperlink{group__envdet_ga15020ce90d79f725afec9800adde0a37}{be64\-\_\-to\-\_\-host} (uint64\-\_\-t v)
+\item 
+static uint16\-\_\-t force\-\_\-inline \hyperlink{group__envdet_ga9e0a2862823999029c872ee352df036d}{le16\-\_\-to\-\_\-host} (uint16\-\_\-t v)
+\item 
+static uint16\-\_\-t force\-\_\-inline \hyperlink{group__envdet_gaaa76713fc07e11b63ee43d6dabdd29f8}{be16\-\_\-to\-\_\-host} (uint16\-\_\-t v)
+\item 
+static uint32\-\_\-t force\-\_\-inline \hyperlink{group__envdet_ga3d6a38ce39dd509a2526a67f8f00f845}{cli\-\_\-readint32} (const void $\ast$buff)
+\item 
+static uint16\-\_\-t force\-\_\-inline \hyperlink{group__envdet_ga50ecabc9fb33d2194b257d68fc136eed}{cli\-\_\-readint16} (const void $\ast$buff)
+\item 
+static void force\-\_\-inline \hyperlink{group__envdet_gae275f25ed41739954c981ed4717ebd22}{cli\-\_\-writeint32} (void $\ast$offset, uint32\-\_\-t v)
+\item 
+static force\-\_\-inline bool \hyperlink{group__pe_ga6241ff42b1300527c64034931f027738}{has\-Exe\-Info} (void)
+\item 
+static force\-\_\-inline bool \hyperlink{group__pe_gabfb2cd189ec07a4e521a906581e421e6}{has\-P\-E\-Info} (void)
+\item 
+static force\-\_\-inline bool \hyperlink{group__pe_ga7480d681206faafd4c0f1923938dd5fe}{is\-P\-E64} (void)
+\item 
+static force\-\_\-inline uint8\-\_\-t \hyperlink{group__pe_ga862c48febe8f611f2d84fed6b66e4d61}{get\-P\-E\-Major\-Linker\-Version} (void)
+\item 
+static force\-\_\-inline uint8\-\_\-t \hyperlink{group__pe_gac77d151a09c2de3b1d803567d24892b3}{get\-P\-E\-Minor\-Linker\-Version} (void)
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__pe_gad9f53af41bcca14d46ce507e2e6ab16c}{get\-P\-E\-Size\-Of\-Code} (void)
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__pe_ga50cf975bcf2f8fff010b8a8a26bb8ada}{get\-P\-E\-Size\-Of\-Initialized\-Data} (void)
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__pe_ga8bcd1876daa53ee94772ada292b039d8}{get\-P\-E\-Size\-Of\-Uninitialized\-Data} (void)
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__pe_ga4856f8c8b2250e9ff7a15bfc651e9dc5}{get\-P\-E\-Base\-Of\-Code} (void)
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__pe_ga906067648342e627e35608446ae28faf}{get\-P\-E\-Base\-Of\-Data} (void)
+\item 
+static force\-\_\-inline uint64\-\_\-t \hyperlink{group__pe_ga5be87a6ddd3f434c8755a54b441da600}{get\-P\-E\-Image\-Base} (void)
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__pe_ga564b495dcdeaccf29a0ad97046be73c1}{get\-P\-E\-Section\-Alignment} (void)
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__pe_ga3d3676596ffad052f01ed7355062921c}{get\-P\-E\-File\-Alignment} (void)
+\item 
+static force\-\_\-inline uint16\-\_\-t \hyperlink{group__pe_ga220d77f9285699cf6bfda4b629193aea}{get\-P\-E\-Major\-Operating\-System\-Version} (void)
+\item 
+static force\-\_\-inline uint16\-\_\-t \hyperlink{group__pe_ga5b621a2c5114f83e6e1b2a2648b17909}{get\-P\-E\-Minor\-Operating\-System\-Version} (void)
+\item 
+static force\-\_\-inline uint16\-\_\-t \hyperlink{group__pe_gaea163191c14a5af87883231d7358070f}{get\-P\-E\-Major\-Image\-Version} (void)
+\item 
+static force\-\_\-inline uint16\-\_\-t \hyperlink{group__pe_ga3c2af71ce767165317d0da8f8a23dc24}{get\-P\-E\-Minor\-Image\-Version} (void)
+\item 
+static force\-\_\-inline uint16\-\_\-t \hyperlink{group__pe_ga9c6364f035901ed9983edc13a709f8f4}{get\-P\-E\-Major\-Subsystem\-Version} (void)
+\item 
+static force\-\_\-inline uint16\-\_\-t \hyperlink{group__pe_gab8516cf0fd00093557a6b84e766f21cf}{get\-P\-E\-Minor\-Subsystem\-Version} (void)
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__pe_ga20c5188f3da8c956592847265abc287b}{get\-P\-E\-Win32\-Version\-Value} (void)
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__pe_ga2a8e7a0acac5e007bfb4e28d57f3170f}{get\-P\-E\-Size\-Of\-Image} (void)
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__pe_ga80cc732b7672ea102d4704946c6eb2aa}{get\-P\-E\-Size\-Of\-Headers} (void)
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__pe_ga07f9eaa84e03e09a833facf15d170bff}{get\-P\-E\-Check\-Sum} (void)
+\item 
+static force\-\_\-inline uint16\-\_\-t \hyperlink{group__pe_ga4027528d4bc10b3b736bf733db903dd1}{get\-P\-E\-Subsystem} (void)
+\item 
+static force\-\_\-inline uint16\-\_\-t \hyperlink{group__pe_ga307bc20f197de9d15bb6e08e9d8f3785}{get\-P\-E\-Dll\-Characteristics} (void)
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__pe_ga61370982c310e3aeed974dd0abe02284}{get\-P\-E\-Size\-Of\-Stack\-Reserve} (void)
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__pe_gae99c81416872de61956e064fc1e32550}{get\-P\-E\-Size\-Of\-Stack\-Commit} (void)
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__pe_gaea6b290ae054a0b872887071b4b0f9f2}{get\-P\-E\-Size\-Of\-Heap\-Reserve} (void)
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__pe_gae9c031fc42de436f574943f089c508c5}{get\-P\-E\-Size\-Of\-Heap\-Commit} (void)
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__pe_gadae84c4057d5721d9606218d3eed5e34}{get\-P\-E\-Loader\-Flags} (void)
+\item 
+static force\-\_\-inline uint16\-\_\-t \hyperlink{group__pe_ga01fe1e273462c9386b45f7661d15b55a}{get\-P\-E\-Machine} ()
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__pe_ga28e4809837328528a644c53d8a864fc6}{get\-P\-E\-Time\-Date\-Stamp} ()
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__pe_ga3edd1734cfe7362eb26f6d6630fefb00}{get\-P\-E\-Pointer\-To\-Symbol\-Table} ()
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__pe_ga49632081cf680004297e0b2ce99c6cb8}{get\-P\-E\-Number\-Of\-Symbols} ()
+\item 
+static force\-\_\-inline uint16\-\_\-t \hyperlink{group__pe_ga22825914a55dbe5d5548a5e07bb0b24d}{get\-P\-E\-Size\-Of\-Optional\-Header} ()
+\item 
+static force\-\_\-inline uint16\-\_\-t \hyperlink{group__pe_gab93887618aa8cebb250f28574634093a}{get\-P\-E\-Characteristics} ()
+\item 
+static force\-\_\-inline bool \hyperlink{group__pe_ga027ee938f8372e45d6fe6197d10ecc96}{get\-P\-Eis\-D\-L\-L} ()
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__pe_gab9e2deafba57fe896c13e38e5d45be9e}{get\-P\-E\-Data\-Dir\-R\-V\-A} (unsigned n)
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__pe_ga19dd537d51a4bfe23f58a92b2332ed02}{get\-P\-E\-Data\-Dir\-Size} (unsigned n)
+\item 
+static force\-\_\-inline uint16\-\_\-t \hyperlink{group__pe_gacc59dfc3eb084259883225674083e553}{get\-Number\-Of\-Sections} (void)
+\item 
+static uint32\-\_\-t \hyperlink{group__pe_ga0ed633b358ee0280504b9e2b55492a8d}{get\-P\-E\-L\-F\-A\-New} (void)
+\item 
+static force\-\_\-inline int \hyperlink{group__pe_ga783b0c34b69dfcdcc3c00e0172e53938}{read\-P\-E\-Section\-Name} (unsigned char name\mbox{[}8\mbox{]}, unsigned n)
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__pe_gad26217bb0fe3c43d933bf48b9957bc53}{get\-Entry\-Point} (void)
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__pe_gae06107422b3a2bd8a9a07fb344e8a8da}{get\-Exe\-Offset} (void)
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__pe_ga20fbd92de54ff30ade353ca8381ec766}{get\-Image\-Base} (void)
+\item 
+static uint32\-\_\-t \hyperlink{group__pe_ga488ebd9cda9e8ba46ba5daae94ddb453}{get\-Virtual\-Entry\-Point} (void)
+\item 
+static uint32\-\_\-t \hyperlink{group__pe_gaedc2fa35d4664099b528c68653f593f2}{get\-Section\-R\-V\-A} (unsigned i)
+\item 
+static uint32\-\_\-t \hyperlink{group__pe_gad81443723d60b2eaf56aa13718a0bf47}{get\-Section\-Virtual\-Size} (unsigned i)
+\item 
+static force\-\_\-inline bool \hyperlink{group__pe_ga59c863dbbe659efa59f38a45dfc0094c}{read\-R\-V\-A} (uint32\-\_\-t rva, void $\ast$buf, size\-\_\-t bufsize)
+\item 
+static force\-\_\-inline void $\ast$ \hyperlink{group__stringops_gac88dda252ac29eb95d78bcf9f94edb0a}{memchr} (const void $\ast$s, int c, size\-\_\-t n)
+\item 
+void $\ast$ \hyperlink{group__stringops_ga9877bb88a253a26e4dbbeeff654475a7}{memset} (void $\ast$src, int c, uintptr\-\_\-t n) \-\_\-\-\_\-attribute\-\_\-\-\_\-((nothrow)) \-\_\-\-\_\-attribute\-\_\-\-\_\-((\-\_\-\-\_\-nonnull\-\_\-\-\_\-((1))))
+\item 
+void $\ast$ \hyperlink{group__stringops_ga39f394f696d30ad1fe11cf7855d33427}{memmove} (void $\ast$dst, const void $\ast$src, uintptr\-\_\-t n) \-\_\-\-\_\-attribute\-\_\-\-\_\-((\-\_\-\-\_\-nothrow\-\_\-\-\_\-)) \-\_\-\-\_\-attribute\-\_\-\-\_\-((\-\_\-\-\_\-nonnull\-\_\-\-\_\-(1
+\item 
+void void $\ast$ \hyperlink{group__stringops_ga11258e4f7b42b36877821eb254d5a134}{memcpy} (void $\ast$restrict dst, const void $\ast$restrict src, uintptr\-\_\-t n) \-\_\-\-\_\-attribute\-\_\-\-\_\-((\-\_\-\-\_\-nothrow\-\_\-\-\_\-)) \-\_\-\-\_\-attribute\-\_\-\-\_\-((\-\_\-\-\_\-nonnull\-\_\-\-\_\-(1
+\item 
+void void int \hyperlink{group__stringops_ga0d6654d3d42bcbe420775653ea8ab198}{memcmp} (const void $\ast$s1, const void $\ast$s2, uint32\-\_\-t n) \-\_\-\-\_\-attribute\-\_\-\-\_\-((\-\_\-\-\_\-nothrow\-\_\-\-\_\-)) \-\_\-\-\_\-attribute\-\_\-\-\_\-((\-\_\-\-\_\-pure\-\_\-\-\_\-)) \-\_\-\-\_\-attribute\-\_\-\-\_\-((\-\_\-\-\_\-nonnull\-\_\-\-\_\-(1
+\item 
+static force\-\_\-inline uint32\-\_\-t \hyperlink{group__disasm_ga1a801c0806f1cb7ed433f139e5769f99}{Disassemble\-At} (struct \hyperlink{struct_d_i_s__fixed}{D\-I\-S\-\_\-fixed} $\ast$result, uint32\-\_\-t offset, uint32\-\_\-t len)
+\item 
+static int32\-\_\-t \hyperlink{bytecode__local_8h_a3c9b722b5ff4d35cfcd8de8a5c48a0ed}{ilog2\-\_\-compat} (uint32\-\_\-t a, uint32\-\_\-t b)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Macro Definition Documentation}
+\hypertarget{bytecode__local_8h_a6b52cfd01216f68d830d874feb25e07c}{\index{bytecode\-\_\-local.\-h@{bytecode\-\_\-local.\-h}!B\-Y\-T\-E\-C\-O\-D\-E\-\_\-\-A\-B\-O\-R\-T\-\_\-\-H\-O\-O\-K@{B\-Y\-T\-E\-C\-O\-D\-E\-\_\-\-A\-B\-O\-R\-T\-\_\-\-H\-O\-O\-K}}
+\index{B\-Y\-T\-E\-C\-O\-D\-E\-\_\-\-A\-B\-O\-R\-T\-\_\-\-H\-O\-O\-K@{B\-Y\-T\-E\-C\-O\-D\-E\-\_\-\-A\-B\-O\-R\-T\-\_\-\-H\-O\-O\-K}!bytecode_local.h@{bytecode\-\_\-local.\-h}}
+\paragraph[{B\-Y\-T\-E\-C\-O\-D\-E\-\_\-\-A\-B\-O\-R\-T\-\_\-\-H\-O\-O\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-Y\-T\-E\-C\-O\-D\-E\-\_\-\-A\-B\-O\-R\-T\-\_\-\-H\-O\-O\-K~0xcea5e}}\label{bytecode__local_8h_a6b52cfd01216f68d830d874feb25e07c}
+entrypoint() return code that tells hook invoker that it should skip executing, probably because it'd trigger a bug in it \hypertarget{bytecode__local_8h_ac9b976f78a0dac8a6996cbb31571044f}{\index{bytecode\-\_\-local.\-h@{bytecode\-\_\-local.\-h}!S\-I\-G\-N\-A\-T\-U\-R\-E\-S\-\_\-\-E\-N\-D@{S\-I\-G\-N\-A\-T\-U\-R\-E\-S\-\_\-\-E\-N\-D}}
+\index{S\-I\-G\-N\-A\-T\-U\-R\-E\-S\-\_\-\-E\-N\-D@{S\-I\-G\-N\-A\-T\-U\-R\-E\-S\-\_\-\-E\-N\-D}!bytecode_local.h@{bytecode\-\_\-local.\-h}}
+\paragraph[{S\-I\-G\-N\-A\-T\-U\-R\-E\-S\-\_\-\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-I\-G\-N\-A\-T\-U\-R\-E\-S\-\_\-\-E\-N\-D~\};}}\label{bytecode__local_8h_ac9b976f78a0dac8a6996cbb31571044f}
+Old macro used to mark the end of the subsignature pattern definitions. 
+
+\subsubsection{Function Documentation}
+\hypertarget{bytecode__local_8h_ad81d7009247e53d5074a464b3a59454c}{\index{bytecode\-\_\-local.\-h@{bytecode\-\_\-local.\-h}!found\-Virus@{found\-Virus}}
+\index{found\-Virus@{found\-Virus}!bytecode_local.h@{bytecode\-\_\-local.\-h}}
+\paragraph[{found\-Virus}]{\setlength{\rightskip}{0pt plus 5cm}static force\-\_\-inline void overloadable\-\_\-func found\-Virus (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{bytecode__local_8h_ad81d7009247e53d5074a464b3a59454c}
+Like \hyperlink{group__scanc_ga95f6c4104903cf54fead01646fd7f9d2}{found\-Virus()} but just use the prefix as virusname \hypertarget{bytecode__local_8h_a3c9b722b5ff4d35cfcd8de8a5c48a0ed}{\index{bytecode\-\_\-local.\-h@{bytecode\-\_\-local.\-h}!ilog2\-\_\-compat@{ilog2\-\_\-compat}}
+\index{ilog2\-\_\-compat@{ilog2\-\_\-compat}!bytecode_local.h@{bytecode\-\_\-local.\-h}}
+\paragraph[{ilog2\-\_\-compat}]{\setlength{\rightskip}{0pt plus 5cm}static int32\-\_\-t ilog2\-\_\-compat (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{a, }
+\item[{uint32\-\_\-t}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{bytecode__local_8h_a3c9b722b5ff4d35cfcd8de8a5c48a0ed}
+ilog2\-\_\-compat for 0.\-96 compatibility, you should use \hyperlink{group__math_ga59893a4520a13171c94d6ce63fce6c4b}{ilog2()} 0.\-96.\-1 A\-P\-I instead of this one! 
+\begin{DoxyParams}{Parameters}
+{\em a} & input \\
+\hline
+{\em b} & input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+2$^\wedge$26$\ast$log2(a/b) 
+\end{DoxyReturn}
